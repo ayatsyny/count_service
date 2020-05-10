@@ -1,0 +1,4 @@
+pip
+pytz
+
+Django==3.0.6
