@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = 'lskfdjDGLSDfgpbj+5h+4shttpohuwr4yg45ltjjgdlskg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.test_apps',
+    'apps.count_service'
 ]
 
 MIDDLEWARE = [
@@ -47,9 +49,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'apps.count_service.middelware.IPAccessMiddleware'
 ]
 
-ROOT_URLCONF = 'count_service.urls'
+ROOT_URLCONF = 'example_count_service.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +71,10 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'count_service.wsgi.application'
+WSGI_APPLICATION = 'example_count_service.wsgi.application'
+
+LOG_PATH = '/count_service/logs'
+LOG_FILE_NAME = 'count_service'
 
 
 # Database

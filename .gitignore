@@ -1,3 +1,12 @@
+# IDE
+.idea/
+
+# DB
+db.sqlite3
+
+# logs
+logs/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
